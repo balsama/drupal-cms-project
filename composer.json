@@ -22,6 +22,7 @@
         "acquia/drupal-recommended-settings": "^1",
         "composer/composer": "^2.8",
         "composer/installers": "^2.3",
+        "cweagans/composer-patches": "^2.0",
         "drupal/byte": "^1",
         "drupal/config_sync_without_site_uuid": "^1.0@beta",
         "drupal/core-composer-scaffold": "^11.3",
@@ -33,7 +34,6 @@
         "drupal/drupal_cms_google_analytics": "^2",
         "drupal/drupal_cms_seo_tools": "^2",
         "drupal/drupal_cms_starter": "^2",
-        "drupal/mysql57": "^1.0",
         "drupal/recipe_installer_kit": "^1.0.4",
         "drupal/webform": "@beta"
     },
