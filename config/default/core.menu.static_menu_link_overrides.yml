@@ -1,0 +1,7 @@
+definitions:
+  announcements_feed__announcement:
+    enabled: false
+    menu_name: admin
+    parent: system.admin
+    weight: 10
+    expanded: false
