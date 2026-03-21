@@ -1,0 +1,12 @@
+langcode: en
+name: 'Drupal CMS'
+mail: admin@example.com
+slogan: ''
+page:
+  403: /user/login
+  404: ''
+  front: /page/1
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: null

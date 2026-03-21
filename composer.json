@@ -1,0 +1,103 @@
+{
+    "name": "acquia/drupal-cms-project",
+    "description": "Drupal with a bunch of useful stuff and a scaffold tailored to Acquia hosting.",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Acquia Engineering",
+            "email": "engineering@acquia.org",
+            "role": "Maintainer"
+        }
+    ],
+    "homepage": "https://github.com/acquia/drupal-cms-project",
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+    "require": {
+        "acquia/drupal-environment-detector": "^1",
+        "acquia/drupal-recommended-settings": "^1",
+        "composer/composer": "^2.8",
+        "composer/installers": "^2.3",
+        "cweagans/composer-patches": "^2.0",
+        "drupal/byte": "^1",
+        "drupal/config_sync_without_site_uuid": "^1.0@beta",
+        "drupal/core-composer-scaffold": "^11.3",
+        "drupal/core-recommended": "^11.3",
+        "drupal/core-vendor-hardening": "^11.3",
+        "drupal/drupal_cms_accessibility_tools": "^2",
+        "drupal/drupal_cms_ai": "^2",
+        "drupal/drupal_cms_forms": "^2",
+        "drupal/drupal_cms_google_analytics": "^2",
+        "drupal/drupal_cms_installer": "^2.1@beta",
+        "drupal/drupal_cms_seo_tools": "^2",
+        "drupal/drupal_cms_starter": "^2",
+        "drupal/recipe_installer_kit": "^1.0.4",
+        "drupal/webform": "@beta"
+    },
+    "require-dev": {
+        "drupal/core-dev": "^11",
+        "drush/drush": "^13"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "acquia/drupal-recommended-settings": true,
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "drupal/core-recipe-unpack": true,
+            "drupal/core-vendor-hardening": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
+        },
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "docroot/"
+            },
+            "file-mapping": {
+                "[web-root]/sites/default/default.services.yml": {
+                    "mode": "replace",
+                    "overwrite": false,
+                    "path": "docroot/core/assets/scaffold/files/default.services.yml"
+                },
+                "[web-root]/sites/default/default.settings.php": {
+                    "mode": "replace",
+                    "overwrite": false,
+                    "path": "docroot/core/assets/scaffold/files/default.settings.php"
+                }
+            }
+        },
+        "installer-paths": {
+            "docroot/core": ["type:drupal-core"],
+            "docroot/libraries/{$name}": ["type:drupal-library"],
+            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+            "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "docroot/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "docroot/profiles/custom/{$name}": ["type:drupal-custom-profile"],
+            "recipes/{$name}": ["type:drupal-recipe"],
+            "docroot/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "patches": {}
+    },
+    "scripts": {
+        "post-create-project-cmd": "rm -rf .github/"
+    }
+}

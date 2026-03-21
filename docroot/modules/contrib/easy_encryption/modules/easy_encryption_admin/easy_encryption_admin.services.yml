@@ -1,0 +1,9 @@
+services:
+  _defaults:
+    autowire: true
+
+  logger.channel.easy_encryption_admin:
+    class: Drupal\Core\Logger\LoggerChannel
+    arguments: ['easy_encryption_admin']
+    tags:
+      - { name: logger.channel }
